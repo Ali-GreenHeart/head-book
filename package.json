@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "startfe": "vite",
+    "startbe": "npx json-server src/db/db.json -p 8976",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
