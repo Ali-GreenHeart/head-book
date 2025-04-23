@@ -49,7 +49,7 @@ export function ThemeProvider({
     }, [theme])
 
     const value = {
-        theme,
+        theme: theme,
         setTheme: (theme: Theme) => {
             localStorage.setItem(storageKey, theme)
             setTheme(theme)
@@ -69,5 +69,5 @@ export const useTheme = () => {
     if (context === undefined)
         throw new Error("useTheme must be used within a ThemeProvider")
 
-    return context
+    return context;
 }
