@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "id": "0",
+            "name": "Alion",
+            "surname": "GreenHeart",
+            "username": "alion-greenheart",
+            "imageUrl": "https://alion.dev/_next/image?url=%2Falion-water.jpeg&w=640&q=75",
+            "password": "alion123",
+            "email": "alion@alion.alion",
+            "friends": []
+        }
+    ]
+}
