@@ -7,3 +7,7 @@ export interface RegisterFormValues {
     confirmPassword: string;
     email: string;
 }
+export interface LoginFormValues {
+    username: string;
+    password: string;
+}
