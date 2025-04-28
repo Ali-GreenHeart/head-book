@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
-import { Bell, Users } from 'lucide-react';
-import { useTheme } from '@@/theme-provider';
-import { ModeToggler } from './mode-toggler';
-import { Link } from 'react-router';
 import { buttonVariants } from '@/components/ui/button';
+import { Bell, Users } from 'lucide-react';
+import React from 'react';
+import { Link, useLocation } from 'react-router';
+import { ModeToggler } from './mode-toggler';
 
 const Navbar: React.FC = () => {
-    const { theme, setTheme } = useTheme();
-    const [isDark, setIsDark] = useState(theme === 'dark');
+    const l = useLocation()
 
-    const toggleTheme = () => {
-        const newTheme = isDark ? 'light' : 'dark';
-        setTheme(newTheme);
-        setIsDark(!isDark);
-    };
 
     return (
         <nav className="flex items-center justify-between p-4">
@@ -29,8 +22,12 @@ const Navbar: React.FC = () => {
                     <Bell className="inline-block" /> Notifications
                 </Link>
             </div>
-
-            <ModeToggler />
+            <div className='space-x-1'>
+                {
+                    !l.pathname.includes('/register') && <Link className={buttonVariants()} to="/register">Come to me</Link>
+                }
+                <ModeToggler />
+            </div>
         </nav>
     );
 };

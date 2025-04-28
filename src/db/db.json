@@ -1,14 +1,23 @@
 {
-    "users": [
-        {
-            "id": "0",
-            "name": "Alion",
-            "surname": "GreenHeart",
-            "username": "alion-greenheart",
-            "imageUrl": "https://alion.dev/_next/image?url=%2Falion-water.jpeg&w=640&q=75",
-            "password": "alion123",
-            "email": "alion@alion.alion",
-            "friends": []
-        }
-    ]
+  "users": [
+    {
+      "id": "0",
+      "name": "Alion",
+      "surname": "GreenHeart",
+      "username": "alion-greenheart",
+      "imageUrl": "https://alion.dev/_next/image?url=%2Falion-water.jpeg&w=640&q=75",
+      "password": "alion123",
+      "email": "alion@alion.alion",
+      "friends": []
+    },
+    {
+      "id": "4782",
+      "name": "Kenan",
+      "surname": "Shukurzade",
+      "username": "kanan-shukurzadeh",
+      "imageUrl": "https://media.istockphoto.com/id/911983386/photo/portrait-of-a-happy-little-girl-laughing-and-smiling.jpg?s=612x612&w=0&k=20&c=3lA0ouSyQQHow2ZutUM2zlIloVRKJ69i9ohA1WbCeBc=",
+      "password": "Kanan123!!!",
+      "email": "kenanshukurzade@gmail.com"
+    }
+  ]
 }

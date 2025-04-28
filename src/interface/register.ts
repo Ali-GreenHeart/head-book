@@ -1,0 +1,9 @@
+export interface RegisterFormValues {
+    name: string;
+    surname: string;
+    username: string;
+    imageUrl: string;
+    password: string;
+    confirmPassword: string;
+    email: string;
+}

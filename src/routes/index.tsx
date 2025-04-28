@@ -1,6 +1,9 @@
 import ContentWrapper from "@/components/layout/content-wrapper"
 import { Route, Routes } from "react-router"
-import Home from "./home";
+import { lazy } from "react";
+// import RegisterPage from "./auth/register";
+const RegisterPage = lazy(() => import("./auth/register"))
+const Home = lazy(() => import("./home"))
 
 const WebRouting = ({ }) => {
     return (
@@ -9,6 +12,7 @@ const WebRouting = ({ }) => {
                 {/* Routes for landing pages */}
                 <Route Component={ContentWrapper}>
                     <Route Component={Home} path="/" />
+                    <Route Component={RegisterPage} path="/register" />
                     <Route Component={Home} path="/about" />
                     <Route Component={Home} path="/contact" />
                 </Route>
