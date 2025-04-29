@@ -10,6 +10,7 @@ const Home = lazy(() => import("./home"))
 const Friends = lazy(() => import('./friends/friends'))
 const EditPage = lazy(() => import('./edit/editPage'))
 const People = lazy(() => import("./people"))
+const NotificationsList = lazy(() => import("./notification/notificationList"))
 
 const WebRouting = ({ }) => {
   return (
@@ -28,6 +29,7 @@ const WebRouting = ({ }) => {
           <Route Component={Friends} path="/friends" />
           <Route Component={EditPage} path="/edit" />
           <Route Component={People} path="/people" />
+          <Route Component={NotificationsList} path="/notification" />
         </Route>
         {/* <Route Component={<Dashboard />}>
                 </Route> */}
