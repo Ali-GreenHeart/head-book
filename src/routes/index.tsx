@@ -5,6 +5,7 @@ import { lazy } from "react";
 const RegisterPage = lazy(() => import("./auth/register"))
 const LoginPage = lazy(() => import("./auth/login"))
 const Home = lazy(() => import("./home"))
+const Friends = lazy(() => import("./friends"))
 
 const WebRouting = ({ }) => {
     return (
@@ -15,10 +16,10 @@ const WebRouting = ({ }) => {
                     <Route Component={Home} path="/" />
                     <Route Component={RegisterPage} path="/register" />
                     <Route Component={LoginPage} path="/login" />
-                    <Route Component={Home} path="/contact" />
+                    <Route Component={Friends} path="/friends" />
+
                 </Route>
                 {/* <Route Component={<Dashboard />}>
-
                 </Route> */}
             </Routes>
         </>
