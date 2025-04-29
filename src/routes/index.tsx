@@ -20,6 +20,8 @@ const WebRouting = ({ }) => {
                     <Route Component={Home} path="/" />
                     <Route Component={RegisterPage} path="/register" />
                     <Route Component={LoginPage} path="/login" />
+                    <Route Component={Friends} path="/friends" />
+
                     <Route Component={Home} path="/contact" />
                     <Route Component={PersonPage} path="/users/:id" />
                     <Route Component={Dashboard} path="/dashboard" />
@@ -28,7 +30,6 @@ const WebRouting = ({ }) => {
                     <Route Component={People} path="/people" />
                 </Route>
                 {/* <Route Component={<Dashboard />}>
-
                 </Route> */}
             </Routes>
         </>
