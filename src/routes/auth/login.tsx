@@ -55,7 +55,7 @@ export default function LoginPage() {
                         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
                         <Formik
                             initialValues={initialValues}
-                            // validationSchema={validationSchema}
+                            validationSchema={validationSchema}
                             onSubmit={handleSubmit}
                         >
                             <Form className="space-y-4">

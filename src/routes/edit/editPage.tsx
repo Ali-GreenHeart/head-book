@@ -5,17 +5,15 @@ import { Label } from "@/components/ui/label";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Helmet } from "react-helmet-async";
-import { RegisterFormValues } from "@/interface/auth";
-import { registerUser } from "@/api/auth";
+import { editUserSchema } from '@/interface/edit'
+// import { registerUser } from "@/api/auth";
 
-const initialValues: RegisterFormValues = {
-    name: "",
-    surname: "",
-    username: "",
-    imageUrl: "",
-    password: "",
-    confirmPassword: '',
-    email: "",
+const initialValues: editUserSchema = {
+    name: "Metin",
+    surname: "Abbaszade",
+    username: "methiin",
+    imageUrl: "https://media.istockphoto.com/id/911983386/photo/portrait-of-a-happy-little-girl-laughing-and-smiling.jpg?s=612x612&w=0&k=20&c=3lA0ouSyQQHow2ZutUM2zlIloVRKJ69i9ohA1WbCeBc=",
+    email: "metinabbaszade@yahoo.com",
 };
 
 const validationSchema = Yup.object({
@@ -37,24 +35,20 @@ const validationSchema = Yup.object({
 });
 
 export default function RegisterPage() {
-    const handleSubmit = (values: RegisterFormValues) => {
-        console.log("Form values:", values);
-        registerUser(values)
-    };
-
+    const handleSubmit = () => { }
     return (
         <>
             <Helmet>
-                <title>Head-Book Register - Show yourself!</title>
+                <title>Head-Book Edit - Show yourself!</title>
                 <meta name="description" content="Register!" />
             </Helmet>
-            <div className="flex min-h-screen items-center justify-center p-4">
+            <div className="flex mt-20 justify-center p-4">
                 <Card className="w-full max-w-md shadow-md">
                     <CardContent className="p-6">
-                        <h1 className="text-2xl font-bold mb-6 text-center">Register</h1>
+                        <h1 className="text-2xl font-bold mb-6 text-center">Edit Your Profile</h1>
                         <Formik
                             initialValues={initialValues}
-                            // validationSchema={validationSchema}
+                            validationSchema={validationSchema}
                             onSubmit={handleSubmit}
                         >
                             <Form className="space-y-4">
@@ -117,29 +111,6 @@ export default function RegisterPage() {
                                     />
                                     <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
                                 </div>
-
-                                {/* Password */}
-                                <div>
-                                    <Label htmlFor="password">Password</Label>
-                                    <Field
-                                        as={Input}
-                                        name="password"
-                                        type="password"
-                                        placeholder="Enter your password"
-                                    />
-                                    <ErrorMessage name="password" component="div" className="text-red-500 text-sm mt-1" />
-                                </div>
-                                <div>
-                                    <Label htmlFor="confirmPassword">Confirm Password</Label>
-                                    <Field
-                                        as={Input}
-                                        name="confirmPassword"
-                                        type="password"
-                                        placeholder="Confirm your password"
-                                    />
-                                    <ErrorMessage name="confirmPassword" component="div" className="text-red-500 text-sm mt-1" />
-                                </div>
-
                                 {/* Submit */}
                                 <Button type="submit" className="w-full">
                                     Register
