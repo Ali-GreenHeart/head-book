@@ -5,6 +5,7 @@ import { lazy } from "react";
 const Dashboard = lazy(() => import("./dashboard/dashboard"));
 const RegisterPage = lazy(() => import("./auth/register"))
 const LoginPage = lazy(() => import("./auth/login"))
+const PersonPage = lazy(() => import("./person"))
 const Home = lazy(() => import("./home"))
 const Friends = lazy(() => import('./friends/friends'))
 const EditPage = lazy(() => import('./edit/editPage'))
@@ -20,6 +21,7 @@ const WebRouting = ({ }) => {
                     <Route Component={RegisterPage} path="/register" />
                     <Route Component={LoginPage} path="/login" />
                     <Route Component={Home} path="/contact" />
+                    <Route Component={PersonPage} path="/users/:id" />
                     <Route Component={Dashboard} path="/dashboard" />
                     <Route Component={Friends} path="/friends" />
                     <Route Component={EditPage} path="/edit" />

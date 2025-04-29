@@ -30,7 +30,7 @@ export default function ProfileCarousel(): JSX.Element {
       name: "Seferov Cosqun",
       image: "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png"
     }
-    ,{
+    , {
       id: 6,
       name: "Heybetova Meleyke",
       image: "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png"
@@ -47,7 +47,7 @@ export default function ProfileCarousel(): JSX.Element {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startX, setStartX] = useState<number>(0);
   const [startScrollLeft, setStartScrollLeft] = useState<number>(0);
-  
+
   // Dragging functionality
   const startDragging = (e: MouseEvent<HTMLDivElement>): void => {
     if (!carouselRef.current) return;
@@ -55,11 +55,11 @@ export default function ProfileCarousel(): JSX.Element {
     setStartX(e.pageX - carouselRef.current.offsetLeft);
     setStartScrollLeft(carouselRef.current.scrollLeft);
   };
-  
+
   const stopDragging = (): void => {
     setIsDragging(false);
   };
-  
+
   const move = (e: MouseEvent<HTMLDivElement>): void => {
     if (!isDragging || !carouselRef.current) return;
     e.preventDefault();
@@ -104,7 +104,7 @@ export default function ProfileCarousel(): JSX.Element {
       </div>
 
       {/* Draggable Carousel Content */}
-      <div 
+      <div
         ref={carouselRef}
         className="flex overflow-x-auto snap-x snap-mandatory cursor-grab gap-4 px-4 pb-6 no-scrollbar scroll-smooth"
         onMouseDown={startDragging}
@@ -140,7 +140,7 @@ export default function ProfileCarousel(): JSX.Element {
       </div>
 
       {/* CSS for hiding scrollbar properly */}
-      <style jsx>{`
+      <style type='jsx'>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
