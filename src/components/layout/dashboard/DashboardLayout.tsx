@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils"
 import { ReactNode } from "react"
 import { Home, BarChart2, Settings } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Link } from "react-router"
+import { CiSettings } from "react-icons/ci";
 
 interface DashboardLayoutProps {
     children: ReactNode
@@ -40,7 +41,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 {/* Header */}
                 <header className="bg-white shadow px-6 py-4 flex justify-between items-center">
                     <h1 className="text-2xl font-semibold">Dashboard</h1>
-                    <Button variant="outline">Logout</Button>
+                    <div className="flex gap-3.5 items-center">
+                        <Link to="/edit" className={buttonVariants({ variant: "outline" })}><CiSettings /></Link>
+                        <Button variant="outline">Logout</Button>
+                    </div>
                 </header>
 
                 {/* Page content */}
