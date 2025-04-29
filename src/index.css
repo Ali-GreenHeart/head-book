@@ -123,3 +123,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Custom əlavə stillər */
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #1e40af;
+  --background-color: #f3f4f6;
+  --border-color: #e5e7eb;
+}
+
