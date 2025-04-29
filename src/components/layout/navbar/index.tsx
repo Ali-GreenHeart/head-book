@@ -3,8 +3,6 @@ import { Bell, Users } from 'lucide-react';
 import React from 'react';
 import { Link, useLocation } from 'react-router';
 import { ModeToggler } from './mode-toggler';
-import a from './logo.jpg'
-
 const Navbar: React.FC = () => {
     const l = useLocation()
 
@@ -12,11 +10,11 @@ const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center justify-between p-4">
             <div className="flex items-center">
-                <img src={a} alt="Logo" className="h-16 w-16 object-cover rounded-full" />
+                <img src="/images/demiryumruq.jpg" alt="Logo" className="h-16 w-16 object-cover rounded-full" />
             </div>
 
             <div className="flex space-x-6">
-                <Link to="#" className={buttonVariants({ variant: "link" })}>
+                <Link to='/people' className={buttonVariants({ variant: "link" })}>
                     <Users className="inline-block" /> People
                 </Link>
                 <Link to="#" className={buttonVariants({ variant: "link" })}>

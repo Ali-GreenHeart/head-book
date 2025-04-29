@@ -8,6 +8,7 @@ const LoginPage = lazy(() => import("./auth/login"))
 const Home = lazy(() => import("./home"))
 const Friends = lazy(() => import('./friends/friends'))
 const EditPage = lazy(() => import('./edit/editPage'))
+const People = lazy(() => import("./people"))
 
 const WebRouting = ({ }) => {
     return (
@@ -22,6 +23,7 @@ const WebRouting = ({ }) => {
                     <Route Component={Dashboard} path="/dashboard" />
                     <Route Component={Friends} path="/friends" />
                     <Route Component={EditPage} path="/edit" />
+                    <Route Component={People} path="/people" />
                 </Route>
                 {/* <Route Component={<Dashboard />}>
 

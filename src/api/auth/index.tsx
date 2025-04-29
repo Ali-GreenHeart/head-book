@@ -19,7 +19,7 @@ export const loginUser = async (values: Partial<LoginFormValues>) => {
     if (!data.length) {
         const err: IBackendErrorMessage = {
             message: "User not found!",
-            status: HttpStatusCode.NotFound
+            status: HttpStatusCode.NotFound,
         }
         throw err;
     }
