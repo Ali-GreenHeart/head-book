@@ -3,7 +3,6 @@ import { Bell, Users } from 'lucide-react';
 import React from 'react';
 import { Link, useLocation } from 'react-router';
 import { ModeToggler } from './mode-toggler';
-
 const Navbar: React.FC = () => {
     const l = useLocation()
 
@@ -15,7 +14,7 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className="flex space-x-6">
-                <Link to="#" className={buttonVariants({ variant: "link" })}>
+                <Link to='#' className={buttonVariants({ variant: "link" })}>
                     <Users className="inline-block" /> People
                 </Link>
                 <Link to="#" className={buttonVariants({ variant: "link" })}>
