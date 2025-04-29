@@ -1,16 +1,16 @@
-import { Button } from "@@/ui/button"
-import { Helmet } from 'react-helmet-async';
+import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
-    return (
-        <>
-            <Helmet>
-                <title>Head-Book -  Your head, your smartness</title>
-                <meta name="description" content="Welcome our community!" />
-            </Helmet>
-            <div className="flex flex-col items-center justify-center">
-                <Button>Click me</Button>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Helmet>
+        <title>Head-Book - Your head, your smartness</title>
+        <meta name="description" content="Welcome to our community!" />
+      </Helmet>
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <Button>Click me</Button>
+      </div>
+    </>
+  );
 }
