@@ -1,10 +1,11 @@
-import { Outlet } from "react-router"
+import {  Outlet, useLocation } from "react-router"
 import Navbar from "./navbar"
 
 const ContentWrapper = ({ }) => {
+    const l = useLocation()
     return (
         <>
-            <Navbar />
+            {!l.pathname.includes('/dashboard') && <Navbar />}
             <Outlet />
             {/* <Footer/> */}
         </>
