@@ -3,6 +3,7 @@ import { Bell, Users } from 'lucide-react';
 import React from 'react';
 import { Link, useLocation } from 'react-router';
 import { ModeToggler } from './mode-toggler';
+import a from './logo.jpg'
 
 const Navbar: React.FC = () => {
     const l = useLocation()
@@ -11,7 +12,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center justify-between p-4">
             <div className="flex items-center">
-                <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+                <img src={a} alt="Logo" className="h-15 w-20" />
             </div>
 
             <div className="flex space-x-6">
