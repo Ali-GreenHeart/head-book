@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className="flex space-x-6">
-                <Link to='#' className={buttonVariants({ variant: "link" })}>
+                <Link to='/people' className={buttonVariants({ variant: "link" })}>
                     <Users className="inline-block" /> People
                 </Link>
                 <Link to="#" className={buttonVariants({ variant: "link" })}>
