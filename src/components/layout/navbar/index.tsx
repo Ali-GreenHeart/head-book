@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center justify-between p-4">
             <div className="flex items-center">
-                <img src={a} alt="Logo" className="h-15 w-20" />
+                <img src={a} alt="Logo" className="h-16 w-16 object-cover rounded-full" />
             </div>
 
             <div className="flex space-x-6">
