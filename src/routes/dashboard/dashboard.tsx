@@ -1,9 +1,23 @@
+import { getFriends, getUsersCount } from "@/api/dashboard"
 import DashboardLayout from "@/components/layout/dashboard/DashboardLayout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import UserCard from "@/components/ui/usercard"
+import { useEffect, useState } from "react"
 import { Helmet } from "react-helmet-async"
 
 export default function DashboardPage() {
+    const [usersCount, setUsersCount] = useState(0)
+    const [friendsCount, setFriendsCount] = useState(0)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const count = await getUsersCount()
+            setUsersCount(count)
+            const friends = await getFriends()
+            setFriendsCount(friends)
+        }
+        fetchData()
+    }, [])
     return (
         <>
             <Helmet>
@@ -13,28 +27,19 @@ export default function DashboardPage() {
             <DashboardLayout>
                 <Card>
                     <CardHeader>
-                        <CardTitle>Users</CardTitle>
+                        <CardTitle>People</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-2xl font-bold">1,024</p>
+                        <p className="text-2xl font-bold">{usersCount}</p>
                     </CardContent>
                 </Card>
 
                 <Card>
                     <CardHeader>
-                        <CardTitle>Sales</CardTitle>
+                        <CardTitle>Friends</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-2xl font-bold">$12,340</p>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Performance</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-2xl font-bold">87%</p>
+                        <p className="text-2xl font-bold">{friendsCount}</p>
                     </CardContent>
                 </Card>
                 <div className="col-span-full flex justify-center">

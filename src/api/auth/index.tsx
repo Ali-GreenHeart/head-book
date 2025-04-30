@@ -2,8 +2,9 @@ import { LoginFormValues, RegisterFormValues } from "@/interface/auth"
 import { IUser } from "@/interface/user";
 import { IBackendErrorMessage } from "@/interface/utils";
 import axios, { HttpStatusCode } from "axios"
+import { BE_URL } from "..";
 
-const BE_URL = process.env.REACT_BE_API_URL
+
 
 
 
@@ -32,7 +33,7 @@ export const loginUser = async (values: Partial<LoginFormValues>) => {
         }
         throw err;
     }
-    const token = crypto.randomUUID()
+    const token = crypto.randomUUID() + user.id
     return {
         message: "Successfully!",
         status: 200,
