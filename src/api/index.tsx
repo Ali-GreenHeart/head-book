@@ -1,5 +1,6 @@
 import { IUser } from "@/interface/user"
-import axios from "axios"
+import { IBackendErrorMessage } from "@/interface/utils"
+import axios, { HttpStatusCode } from "axios"
 
 export const BE_URL = process.env.REACT_BE_API_URL
 
@@ -13,5 +14,9 @@ export const mwCheckLoggedUser = async () => {
             return data[0].id;
         }
     }
-    return '';
+    const err: IBackendErrorMessage = {
+        message: "You are not logged in!",
+        status: HttpStatusCode.Unauthorized
+    }
+    throw err;
 }

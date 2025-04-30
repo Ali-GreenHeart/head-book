@@ -15,13 +15,7 @@ export const getUserInfo = async () => {
 
 export const getFriends: () => Promise<number> = async () => {
     const loggedInUserId = await mwCheckLoggedUser()
-    if (!loggedInUserId) {
-        const err: IBackendErrorMessage = {
-            message: "You are not logged in!",
-            status: HttpStatusCode.Unauthorized
-        }
-        throw err;
-    }
+
     const { data }: { data: IUser[] } = await axios.get(`${BE_URL}/users?id=${loggedInUserId}`)
     return data[0].friends?.length || 0;
 }
