@@ -1,15 +1,15 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
-import * as Yup from "yup";
-import { Helmet } from "react-helmet-async";
+import { AuthContext } from "@/context/AuthContext";
 import { LoginFormValues } from "@/interface/auth";
-import { loginUser } from "@/api/auth";
-import { useState } from "react";
 import { IBackendErrorMessage } from "@/interface/utils";
-import { Link, useNavigate, useNavigation } from "react-router";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useContext, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router";
+import * as Yup from "yup";
 
 const initialValues: LoginFormValues = {
     username: "",
@@ -29,15 +29,11 @@ const validationSchema = Yup.object({
 
 export default function LoginPage() {
     const [err, setErr] = useState<IBackendErrorMessage>()
-    const navigate = useNavigate()
+    const { logInFunction } = useContext(AuthContext)
     const handleSubmit = async (values: LoginFormValues) => {
         console.log("Form values:", values);
         try {
-            const { token } = await loginUser(values)
-            // Alert elave et!
-            // dashboard-a yonelt!
-            localStorage.setItem('head-book-token', token)
-            navigate("/dashboard")
+            logInFunction(values)
         } catch (_err: any) {
             setErr(_err)
         }

@@ -1,12 +1,7 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
+import { IUser } from "@/interface/user"
 
-interface UserCardProps {
-    name: string
-    surname: string
-    username: string
-    imageUrl: string
-    email: string
-}
+interface UserCardProps extends Partial<IUser> { }
 
 export default function UserCard({
     name,

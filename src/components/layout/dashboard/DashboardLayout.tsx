@@ -1,10 +1,9 @@
-import { cn } from "@/lib/utils"
-import { ReactNode } from "react"
-import { Home, BarChart2, Settings } from "lucide-react"
 import { Button, buttonVariants } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { AuthContext } from "@/context/AuthContext"
+import { BarChart2, Home, Settings } from "lucide-react"
+import { ReactNode, useContext } from "react"
+import { CiSettings } from "react-icons/ci"
 import { Link } from "react-router"
-import { CiSettings } from "react-icons/ci";
 
 interface DashboardLayoutProps {
     children: ReactNode
@@ -17,6 +16,7 @@ const navItems = [
 ]
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
+    const { logOutFunction } = useContext(AuthContext)
     return (
         <div className="flex min-h-screen bg-gray-100">
             {/* Sidebar */}
@@ -43,7 +43,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                     <h1 className="text-2xl font-semibold">Dashboard</h1>
                     <div className="flex gap-3.5 items-center">
                         <Link to="/edit" className={buttonVariants({ variant: "outline" })}><CiSettings /></Link>
-                        <Button variant="outline">Logout</Button>
+                        <Button onClick={logOutFunction} variant="outline">Logout</Button>
                     </div>
                 </header>
 
