@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
@@ -9,7 +9,7 @@ import { LoginFormValues } from "@/interface/auth";
 import { loginUser } from "@/api/auth";
 import { useState } from "react";
 import { IBackendErrorMessage } from "@/interface/utils";
-import { useNavigate, useNavigation } from "react-router";
+import { Link, useNavigate, useNavigation } from "react-router";
 
 const initialValues: LoginFormValues = {
     username: "",
@@ -86,6 +86,7 @@ export default function LoginPage() {
                                 <Button type="submit" className="w-full">
                                     Login
                                 </Button>
+                                <Link to="/register" className={buttonVariants({ variant: "link" })} >New? Register!</Link>
                             </Form>
                         </Formik>
                     </CardContent>
