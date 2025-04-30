@@ -1,8 +1,9 @@
-import { LoginFormValues, RegisterFormValues } from "@/interface/auth"
+import { LoginFormValues, RegisterFormValues } from "@/interface/auth";
 import { IUser } from "@/interface/user";
 import { IBackendErrorMessage } from "@/interface/utils";
-import axios, { HttpStatusCode } from "axios"
+import axios, { HttpStatusCode } from "axios";
 import { BE_URL } from "..";
+import { useNavigate } from "react-router";
 
 
 
@@ -42,3 +43,9 @@ export const loginUser = async (values: Partial<LoginFormValues>) => {
 
 }
 
+export const logOut = () => {
+    console.log('salam')
+    const navigate = useNavigate()
+    localStorage.removeItem('head-book-token');
+    navigate('/login')
+}

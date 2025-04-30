@@ -1,7 +1,6 @@
-import axios, { HttpStatusCode } from "axios"
-import { BE_URL, mwCheckLoggedUser } from ".."
 import { IUser } from "@/interface/user"
-import { IBackendErrorMessage } from "@/interface/utils"
+import axios from "axios"
+import { BE_URL, mwCheckLoggedUser } from ".."
 
 
 export const getUsersCount = async () => {
@@ -10,7 +9,9 @@ export const getUsersCount = async () => {
 }
 
 export const getUserInfo = async () => {
-    // your code here
+    const loggedInUserId = await mwCheckLoggedUser()
+    const { data }: { data: IUser[] } = await axios.get(`${BE_URL}/users?id=${loggedInUserId}`)
+    return data[0];
 }
 
 export const getFriends: () => Promise<number> = async () => {

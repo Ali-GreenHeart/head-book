@@ -14,9 +14,4 @@ export const mwCheckLoggedUser = async () => {
             return data[0].id;
         }
     }
-    const err: IBackendErrorMessage = {
-        message: "You are not logged in!",
-        status: HttpStatusCode.Unauthorized
-    }
-    throw err;
 }
