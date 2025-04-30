@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -7,6 +7,7 @@ import * as Yup from "yup";
 import { Helmet } from "react-helmet-async";
 import { RegisterFormValues } from "@/interface/auth";
 import { registerUser } from "@/api/auth";
+import { Link } from "react-router";
 
 const initialValues: RegisterFormValues = {
     name: "",
@@ -144,12 +145,13 @@ export default function RegisterPage() {
                                 <Button type="submit" className="w-full">
                                     Register
                                 </Button>
+                                <Link to="/login" className={buttonVariants({ variant: "link" })} >Have an account? Log in!</Link>
                             </Form>
                         </Formik>
                     </CardContent>
                 </Card>
             </div>
-           
+
         </>
     );
 }
