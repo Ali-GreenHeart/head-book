@@ -1,3 +1,6 @@
+# npx json-server db.json -p 8976
+
+
 {
   "users": [
     {
@@ -9,8 +12,7 @@
       "password": "Ali123@@@",
       "email": "alion@alion.alion",
       "friends": [
-        "4782",
-        "f020"
+        "9b19"
       ]
     },
     {

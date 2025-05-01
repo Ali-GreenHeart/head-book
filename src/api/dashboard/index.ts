@@ -14,9 +14,9 @@ export const getUserInfo = async () => {
     return data[0];
 }
 
-export const getFriends: () => Promise<number> = async () => {
+export const getFriends: () => Promise<string[]> = async () => {
     const loggedInUserId = await mwCheckLoggedUser()
 
     const { data }: { data: IUser[] } = await axios.get(`${BE_URL}/users?id=${loggedInUserId}`)
-    return data[0].friends?.length || 0;
+    return data[0].friends!;
 }
