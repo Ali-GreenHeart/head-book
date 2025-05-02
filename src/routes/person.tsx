@@ -17,11 +17,11 @@ export default function PersonPage() {
 
   const fetchUser = async () => {
     setLoading(true);
-  
+
     try {
-      const res = await fetch(`http://localhost:8976/users${id}`);
+      const res = await fetch(`http://localhost:8977/users${id}`);
       if (!res.ok) throw new Error("User not found");
-  
+
       const data: User = await res.json();
       console.log("Fetched data:", data);
       setUser(data);
@@ -39,7 +39,7 @@ export default function PersonPage() {
       fetchUser();
     }
   }, [id]);
-  
+
 
   if (loading) return <div className="p-4">Loading...</div>;
   if (!user) return <div className="p-4">User not found.</div>;

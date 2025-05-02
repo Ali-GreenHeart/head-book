@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "startfe": "vite",
-    "startbe": "npx json-server src/db/db.json -p 8976",
+    "startbe": "npx json-server D:/veb3/db/db.json -p 8977",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
