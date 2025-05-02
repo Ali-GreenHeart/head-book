@@ -36,15 +36,15 @@ const Notifications = () => {
           <p>No notifications yet.</p>
         ) : (
           <ul className="space-y-4">
-            {notifications.map((n) => (
+            {notifications.map((notification) => (
               <li
-                key={n.id}
+                key={notification.id}
                 className={`p-4 rounded-lg shadow-md ${
-                  n.isRead ? "bg-gray-100" : "bg-blue-100"
+                  notification.isRead ? "bg-gray-100" : "bg-blue-100"
                 }`}
               > <div>                
               </div>
-                {n.message}
+                {notification.message}
               </li>
             ))}
           </ul>
