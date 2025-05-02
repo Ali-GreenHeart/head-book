@@ -7,4 +7,10 @@ export interface IUser {
     password: string;
     email: string;
     friends?: string[];
+    notifications?: {
+        id: string;
+        message: string;
+        isRead: boolean;
+    }[];
+
 }

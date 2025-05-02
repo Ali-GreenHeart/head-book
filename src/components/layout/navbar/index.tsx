@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
                 <Link to='/people' className={buttonVariants({ variant: "link" })}>
                     <Users className="inline-block" /> People
                 </Link>
-                <Link to="#" className={buttonVariants({ variant: "link" })}>
+                <Link to="/notifications" className={buttonVariants({ variant: "link" })}>
                     <Bell className="inline-block" /> Notifications
                 </Link>
             </div>
