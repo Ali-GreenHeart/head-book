@@ -1,11 +1,12 @@
 import { buttonVariants } from '@/components/ui/button';
 import { Bell, Users } from 'lucide-react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router';
 import { ModeToggler } from './mode-toggler';
+import { AuthContext } from '@/context/AuthContext';
 const Navbar: React.FC = () => {
     const l = useLocation()
-
+    const { auth } = useContext(AuthContext)
 
     return (
         <nav className="flex items-center justify-between p-4">
@@ -23,7 +24,10 @@ const Navbar: React.FC = () => {
             </div>
             <div className='space-x-1'>
                 {
-                    !l.pathname.includes('/register') && <Link className={buttonVariants()} to="/register">Come to me</Link>
+                    !auth.id && <Link className={buttonVariants()} to="/register">Come to me</Link>
+                }
+                {
+                    auth.id && <Link className={buttonVariants()} to="/dashboard">My Dashboard</Link>
                 }
                 <ModeToggler />
             </div>

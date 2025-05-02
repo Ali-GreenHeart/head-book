@@ -13,7 +13,9 @@ const People = () => {
       setUsers(data)
     })
     getFriends().then((_f) => {
-      setFriends(_f)
+      if (_f) {
+        setFriends(_f)
+      }
     })
 
   }, [])

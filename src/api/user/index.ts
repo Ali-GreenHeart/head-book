@@ -2,6 +2,7 @@ import { IUser } from "@/interface/user";
 import axios from "axios";
 import { BE_URL } from "..";
 import { isReadable } from "stream";
+import { createNotification } from "../dashboard";
 
 export const getUsers = async () => {
   const { data }: { data: IUser[] } = await axios.get(`${BE_URL}/users`);
@@ -26,18 +27,7 @@ export const addFriend = async (userId: string, authId: string) => {
   } else {
     friends = [...friends, userId];
     isAdded = true;
-    const newNotification = {
-      id: Date.now().toString(),
-      message: "You have been added by " + authUser.name,
-      isRead: false,
-    };
-
-    const updatedNotifications = targetUser.notifications
-      ? [...targetUser.notifications, newNotification]
-      : [newNotification];
-    await axios.patch(`${BE_URL}/users/${userId}`, {
-      notifications: updatedNotifications,
-    });
+    await createNotification(authUser, targetUser, userId)
     console.log(targetUser)
   }
   await axios.patch(`${BE_URL}/users/${authId}`, {

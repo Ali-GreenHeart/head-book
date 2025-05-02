@@ -1,6 +1,6 @@
 import { Button, buttonVariants } from "@/components/ui/button"
 import { AuthContext } from "@/context/AuthContext"
-import { BarChart2, Home, Settings } from "lucide-react"
+import { BarChart2, Bell, Home, Settings } from "lucide-react"
 import { ReactNode, useContext } from "react"
 import { CiSettings } from "react-icons/ci"
 import { Link } from "react-router"
@@ -13,6 +13,7 @@ const navItems = [
     { name: "Home", icon: <Home size={18} />, href: "/" },
     { name: "Contact", icon: <BarChart2 size={18} />, href: "/contact" },
     { name: "Friends", icon: <Settings size={18} />, href: "/friends" },
+    { name: "Notifications", icon: <Bell size={18} />, href: "/notifications" },
 ]
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
